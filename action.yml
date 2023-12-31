@@ -17,6 +17,10 @@ inputs:
     description: Directory in the workspace where built firmware will be placed
     default: qmk-output
 
+outputs:
+  built-images:
+    description: A comma separated list of files copied to the output directory
+
 runs:
   using: docker
   image: Dockerfile

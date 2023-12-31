@@ -27,3 +27,6 @@ qmk compile -kb "$keyboard" -km "$keymap"
 
 mkdir "$qmk_output"
 find "/opt/qmk_firmware/.build" \( -name '*.hex' -or -name '*.bin' \) -exec cp -v {} "$qmk_output" \;
+
+echo "built-images=$(find "$qmk_output" -type f | sed "s|^$qmk_output||" | paste -sd ',')" \
+  >> "$GITHUB_OUTPUT"
