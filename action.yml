@@ -10,6 +10,9 @@ inputs:
     description: The keymap to build for this firmware
     required: true
     default: default
+  output-dir:
+    description: Directory in the workspace where built firmware will be placed
+    default: qmk-output
 
 runs:
   using: docker
@@ -17,3 +20,4 @@ runs:
   args:
     - ${{ inputs.keyboard }}
     - ${{ inputs.keymap }}
+    - ${{ inputs.output-dir }}
