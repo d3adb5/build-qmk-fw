@@ -10,6 +10,9 @@ inputs:
     description: The keymap to build for this firmware
     required: true
     default: default
+  local-keymap-path:
+    description: Path to a local keymap directory to inject into the QMK home
+    default: ""
   output-dir:
     description: Directory in the workspace where built firmware will be placed
     default: qmk-output
@@ -21,3 +24,4 @@ runs:
     - ${{ inputs.keyboard }}
     - ${{ inputs.keymap }}
     - ${{ inputs.output-dir }}
+    - ${{ inputs.local-keymap-path }}
