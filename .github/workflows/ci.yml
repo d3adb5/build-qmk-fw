@@ -7,6 +7,13 @@ on:
   pull_request: {}
 
 jobs:
+  shellcheck:
+    name: ShellCheck Entrypoint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ludeeus/action-shellcheck@2.0.0
+
   build:
     name: Build DZ65 RGB v3
     runs-on: ubuntu-latest
