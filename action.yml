@@ -1,0 +1,19 @@
+name: Build QMK Firmware
+
+description: Build QMK firmware from source
+
+inputs:
+  keyboard:
+    description: The target keyboard for this firmware build
+    required: true
+  keymap:
+    description: The keymap to build for this firmware
+    required: true
+    default: default
+
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.keyboard }}
+    - ${{ inputs.keymap }}
