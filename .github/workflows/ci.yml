@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request: {}
+
+jobs:
+  shellcheck:
+    name: ShellCheck Entrypoint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ludeeus/action-shellcheck@2.0.0
+
+  build:
+    name: Build DZ65 RGB v3
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./
+        with:
+          keyboard: dztech/dz65rgb/v3
+          keymap: testing-keymap
+          local-keymap-path: test/keymaps/testing-keymap
