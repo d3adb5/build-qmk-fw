@@ -2,6 +2,10 @@ name: Build QMK Firmware
 
 description: Build QMK firmware from source
 
+branding:
+  icon: box
+  color: blue
+
 inputs:
   keyboard:
     description: The target keyboard for this firmware build
