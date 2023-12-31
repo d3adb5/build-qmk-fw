@@ -12,7 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
       - uses: d3adb5/build-qmk-fw@feat/add-first-implementation
         with:
           keyboard: dztech/dz65rgb/v3
-          keymap: default
+          keymap: testing-keymap
+          local-keymap-path: test/keymaps/testing-keymap
