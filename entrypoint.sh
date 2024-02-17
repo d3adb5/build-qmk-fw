@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 readonly keyboard="$1"
 readonly keymap="$2"
 readonly qmk_output="$3"
