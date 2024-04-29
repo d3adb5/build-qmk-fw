@@ -25,3 +25,15 @@ jobs:
           keyboard: dztech/dz65rgb/v3
           keymap: testing-keymap
           local-keymap-path: test/keymaps/testing-keymap
+
+  build-helios:
+    name: Build Corne for Helios
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./
+        with:
+          keyboard: crkbd/rev1
+          keymap: default
+          controller: helios
