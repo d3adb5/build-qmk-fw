@@ -8,6 +8,7 @@ Build QMK firmware for your keyboard using your keymap with GitHub Actions.
 |:--------------------|:---------------------------------------------------------------|:---------|:-------------|
 | `keyboard`          | The target keyboard for this firmware build                    | Yes      |              |
 | `keymap`            | The keymap to build for this firmware                          | Yes      | `default`    |
+| `controller`        | The controller to build for this firmware                      | No       |              |
 | `local-keymap-path` | Path to a local keymap directory to inject into the QMK home   | No       | ` `          |
 | `output-dir`        | Directory in the workspace where built firmware will be placed | No       | `qmk-output` |
 
@@ -36,6 +37,7 @@ jobs:
         with:
           keyboard: dztech/dz65rgb/v3
           keymap: my-keymap
+          controller: helios
           local-keymap-path: keymaps/my-keymap
           output-dir: qmk-firmware-to-be-flashed
 
